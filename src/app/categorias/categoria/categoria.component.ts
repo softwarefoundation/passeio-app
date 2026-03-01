@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CategoriaService} from "../categoria.service";
 
 @Component({
     selector: 'app-categoria',
@@ -12,7 +13,7 @@ export class CategoriaComponent {
     camposForm: FormGroup;
 
 
-    constructor() {
+    constructor(private categoriaService: CategoriaService) {
         this.camposForm = new FormGroup({
             nome: new FormControl('', Validators.required),
             descricao: new FormControl('', Validators.required)
@@ -27,6 +28,11 @@ export class CategoriaComponent {
 
         if (this.camposForm.invalid) {
             console.log('Valores: ', this.camposForm.value);
+            this.categoriaService.salvar(this.camposForm.value)
+                .subscribe({
+                    next: value => console.log('Salvo: ', value),
+                    error: err => console.error('Erro: ', err)
+                });
         }
 
     }
