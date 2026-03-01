@@ -11,7 +11,9 @@
                    formControlName="nome"
                    class="w-full p-3 border border-green-300 rounded  shadow-sm focus:ring  focus:ring-blue-400"
                    placeholder="Ex: Restaurantes, Praias, Shopping">
-            <span class="text-red-500 text-sm">Campo obrigatório</span>
+            @if (isCampoInvalido('nome')) {
+                <span class="text-red-500 text-sm">Campo obrigatório</span>
+            }
         </div>
         <div class="mb-4">
             <!--Campo descrição-->
@@ -25,7 +27,9 @@
                       placeholder="Ex: Restaurantes, Praias, Shopping"
                       required>
             </textarea>
-            <span class="text-red-500 text-sm">Campo obrigatório</span>
+            @if (isCampoInvalido('descricao')) {
+                <span class="text-red-500 text-sm">Campo obrigatório</span>
+            }
         </div>
 
         <button type="submit"

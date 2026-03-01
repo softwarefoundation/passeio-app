@@ -21,8 +21,22 @@ export class CategoriaComponent {
 
 
     salvar() {
-        console.log('Valores: ', this.camposForm.value);
-        console.log('Valido: ', this.camposForm.valid);
+
+
+        this.camposForm.markAllAsTouched();
+
+        if (this.camposForm.invalid) {
+            console.log('Valores: ', this.camposForm.value);
+        }
+
+    }
+
+
+    isCampoInvalido(campoNome: string) {
+        const campo = this.camposForm.get(campoNome);
+        return campo?.invalid
+            && campo?.touched
+            && campo?.errors?.['required'];
     }
 
 }
