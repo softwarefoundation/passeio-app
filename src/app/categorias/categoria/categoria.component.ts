@@ -23,14 +23,16 @@ export class CategoriaComponent {
 
     salvar() {
 
-
         this.camposForm.markAllAsTouched();
 
-        if (this.camposForm.invalid) {
+        if (this.camposForm.valid) {
             console.log('Valores: ', this.camposForm.value);
             this.categoriaService.salvar(this.camposForm.value)
                 .subscribe({
-                    next: value => console.log('Salvo: ', value),
+                    next: value => {
+                        console.log('Sucesso: ', value);
+                        this.camposForm.reset();
+                    },
                     error: err => console.error('Erro: ', err)
                 });
         }

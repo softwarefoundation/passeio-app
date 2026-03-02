@@ -12,11 +12,11 @@ export class CategoriaService {
     }
 
     salvar(categoria: Categoria): Observable<Categoria> {
-        return this.http.post<Categoria>('/api/categorias', categoria);
+        return this.http.post<Categoria>('http://localhost:3000/categorias', categoria);
     }
 
     obterTodos(): Observable<Categoria[]> {
-        return this.http.get<Categoria[]>('/api/categorias');
+        return this.http.get<Categoria[]>('http://localhost:3000/categorias');
     }
 
 }
