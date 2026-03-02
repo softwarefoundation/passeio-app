@@ -36,7 +36,6 @@ export class CategoriaComponent {
                     error: err => console.error('Erro: ', err)
                 });
         }
-
     }
 
 

@@ -16,5 +16,15 @@
       "descricao": "Praias com Águas Cristalinas"
     }
   ],
+  "lugares": [
+    {
+      "id": "3c65",
+      "nome": "Shopping Via Lago",
+      "categoria": "1",
+      "localizacao": "Via Lago",
+      "urlFoto": "http://foto",
+      "avaliacao": "5"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
