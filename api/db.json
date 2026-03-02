@@ -23,7 +23,7 @@
       "categoria": "1",
       "localizacao": "Via Lago",
       "urlFoto": "https://www.ilhabela.com.br/wp-content/uploads/2025/01/praia-de-castelhanos-drone-mirante-do-coracao-marcos-cara-maremar-turismo-ilhabela.jpg",
-      "avaliacao": "5"
+      "avaliacao": "4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
