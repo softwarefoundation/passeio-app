@@ -20,6 +20,18 @@
         <div class="mb-4">
             <!--Campo categoria-->
             <label for="categoria" class="block text-gray-600 font-medium mb-2">Categoria</label>
+            <select id="categoria"
+                    name="categoria"
+                    formControlName="categoria"
+                    class="w-full p-3 border border-green-300 rounded  shadow-sm focus:ring  focus:ring-blue-400">
+                <option value="">Selecione uma categoria</option>
+                @for (categoria of categorias; track categoria.id) {
+                    <option [value]="categoria.id">{{ categoria.nome }}</option>
+                }
+            </select>
+            @if (isCampoInvalido('categoria')) {
+                <span class="text-red-500 text-sm">Campo obrigatório</span>
+            }
         </div>
 
         <div class="mb-4">
@@ -30,7 +42,7 @@
                    name="localizacao"
                    formControlName="localizacao"
                    class="w-full p-3 border border-green-300 rounded  shadow-sm focus:ring  focus:ring-blue-400"
-                   placeholder="Ex: Restaurantes, Praias, Shopping">
+                   placeholder="Ex: Localizações">
             @if (isCampoInvalido('localizacao')) {
                 <span class="text-red-500 text-sm">Campo obrigatório</span>
             }
@@ -38,13 +50,13 @@
 
         <div class="mb-4">
             <!--Campo urlFoto-->
-            <label for="urlFoto" class="block text-gray-600 font-medium mb-2">URL Foto</label>
+            <label for="urlFoto" class="block text-gray-600 font-medium mb-2">Foto</label>
             <input type="text"
                    id="urlFoto"
                    name="urlFoto"
                    formControlName="urlFoto"
                    class="w-full p-3 border border-green-300 rounded  shadow-sm focus:ring  focus:ring-blue-400"
-                   placeholder="Ex: Restaurantes, Praias, Shopping">
+                   placeholder="Ex: Url da foto">
             @if (isCampoInvalido('urlFoto')) {
                 <span class="text-red-500 text-sm">Campo obrigatório</span>
             }
@@ -53,6 +65,17 @@
         <div class="mb-4">
             <!--Campo avaliacao-->
             <label for="avaliacao" class="block text-gray-600 font-medium mb-2">Avaliação</label>
+            <select id="avaliacao"
+                    name="avaliacao"
+                    formControlName="avaliacao"
+                    class="w-full p-3 border border-green-300 rounded  shadow-sm focus:ring  focus:ring-blue-400">
+                <option value="">Selecione uma avaliação</option>
+                <option value="1">1 - Ruim</option>
+                <option value="2">2 - Regualar</option>
+                <option value="3">3 - Bom</option>
+                <option value="4">4 - Muito Bom</option>
+                <option value="5">5 - Excelente</option>
+            </select>
         </div>
 
         <button type="submit"
